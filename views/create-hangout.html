@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Taste Buds</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../public/styles/styles.css" media="screen" title="no title">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="show-buds-container">
+        <h2>Buds</h2>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="bud1">
+            <label class="form-check-label" for="defaultCheck1">
+            Bud #1
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="bud2">
+            <label class="form-check-label" for="defaultCheck2">
+                    Bud #2
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="bud3">
+            <label class="form-check-label" for="defaultCheck2">
+                    Bud #3
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="bud4">
+            <label class="form-check-label" for="defaultCheck2">
+                    Bud #4
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="bud5">
+            <label class="form-check-label" for="defaultCheck2">
+            Bud #5
+            </label>
+        </div>
+
+          
+        <form class="form-inline">
+            <div class="form-group mb-2">
+                <label for="addingNewBud" class="sr-only">Add a New Bud</label>
+                <input type="text" readonly class="form-control-plaintext" value="Add a New Bud">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="newBudName" class="sr-only">Add a New Bud</label>
+                <input type="text" class="form-control" id="newBudName" placeholder="Bud name">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2 add-bud">Add</button>
+        </form>
+    </div>
+
+    <div class="create-hangout-container">
+        <h2>Create a Hangout</h2>
+        <form>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" class="form-control" id="enterLocation" placeholder="Orlando, FL">
+            </div>
+            <div class="form-group">
+                    <label for="datetime">Date & Time</label>
+                    <input type="text" class="form-control" id="dateTime" placeholder="09/25/19, 7:00pm">
+            </div>
+            <h3>Choose one:</h3>
+            <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="cafe" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Cafe</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="restaurant" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Restaurant</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="bar" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">Bar</label>
+            </div>
+        </form>
+    </div>
+    <button type="submit" class="btn btn-primary create-hangout">Submit</button>
+
+  <script src="../public/js/buds.js" type="text/javascript"></script>
+  <script src="../public/js/hangout.js" type="text/javascript"></script>
+
+</body>
+
+</html>

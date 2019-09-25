@@ -17,19 +17,16 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../views/index.html"));
   });
 
-  // cms route loads cms.html
-//   app.get("/cms", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/cms.html"));
-//   });
+  app.get("/register", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/register.html"));
+  });
 
-//   // blog route loads blog.html
-//   app.get("/blog", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/blog.html"));
-//   });
+  app.get("/create-hangout", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/create-hangout.html"));
+  });
 
-//   // authors route loads author-manager.html
-//   app.get("/authors", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/author-manager.html"));
-//   });
+  app.get("/hangout", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/hangout.html"));
+  });
 
 };
