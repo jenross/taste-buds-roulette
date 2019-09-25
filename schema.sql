@@ -1,0 +1,3 @@
+  
+DROP DATABASE IF EXISTS tasteBudsDB;
+CREATE DATABASE tasteBudsDB;
