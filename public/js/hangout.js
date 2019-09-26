@@ -5,7 +5,7 @@ let service;
 let infowindow;
 
       function initMap() {
-        let orlando = new google.maps.LatLng(28.5383, 81.3792);
+        let orlando = new google.maps.LatLng(-28.5383, 81.3792);
 
         infowindow = new google.maps.InfoWindow();
 
