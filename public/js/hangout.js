@@ -6,22 +6,22 @@ let searchResults;
 
 
 // Google Maps Initializer
-function initMap(venue0, locationResult) {
-    let location = venue0;
+function initMap() {
+    // let location = venue0;
     map = new google.maps.Map(document.getElementById('map'), {
-      center: locationResult,
+      center: {lat: -28.5383, lng: 81.3792},
       zoom: 15
     });
-    searchResults.forEach(function(e, i) {
-      makeMarker(locationResult[i]);
-    })
+    // searchResults.forEach(function(e, i) {
+    //   makeMarker(locationResult[i]);
+    // })
 }
 
 // gMaps Marker Creation
 function makeMarker(locationResult) {
-    var marker = new google.maps.Marker({position: venues.coords, map: map});
+    var marker = new google.maps.Marker({position: searchResults.coords, map: map});
     let infoWindow = new google.maps.InfoWindow({
-      content:locationResult.content
+      content:searchResults.content
     });
     marker.addListener('click', function() {
       infoWindow.open(map, marker);
