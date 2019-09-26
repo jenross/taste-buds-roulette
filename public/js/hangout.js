@@ -7,11 +7,12 @@ let map;
 
 // Google Maps Initializer
 function initMap() {
+    console.log("working");
     // let location = venue0;
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -28.5383, lng: 81.3792},
-      zoom: 15
-    });
+    // map = new google.maps.Map(document.getElementById('map'), {
+    //   center: {lat: -28.5383, lng: 81.3792},
+    //   zoom: 15
+    // });
     // searchResults.forEach(function(e, i) {
     //   makeMarker(locationResult[i]);
     // })
