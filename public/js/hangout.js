@@ -1,4 +1,5 @@
 let locationInput = document.getElementById('enterLocation');
+let googleLogo = document.getElementById('google-logo');
 
 let map;
 let service;
