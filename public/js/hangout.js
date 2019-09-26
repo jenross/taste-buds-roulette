@@ -1,43 +1,70 @@
 let locationInput = document.getElementById('enterLocation');
 let googleLogo = document.getElementById('google-logo');
 
-let map;
-let service;
-let infowindow;
+let locationResult;
+let searchResults;
 
-      function initMap() {
-        let sydney = new google.maps.LatLng(-33.867, 151.195);
 
-        infowindow = new google.maps.InfoWindow();
+// Google Maps Initializer
+function initMap(venue0, locationResult) {
+    let location = venue0;
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: locationResult,
+      zoom: 15
+    });
+    searchResults.forEach(function(e, i) {
+      makeMarker(locationResult[i]);
+    })
+}
 
-        map = new google.maps.Map(
-            document.getElementById('map'), {center: sydney, zoom: 15});
+// gMaps Marker Creation
+function makeMarker(locationResult) {
+    var marker = new google.maps.Marker({position: venues.coords, map: map});
+    let infoWindow = new google.maps.InfoWindow({
+      content:locationResult.content
+    });
+    marker.addListener('click', function() {
+      infoWindow.open(map, marker);
+    })
+}
 
-        let request = {
-          query: 'Museum of Contemporary Art Australia',
-          fields: ['name', 'geometry'],
-        };
+// let map;
+// let service;
+// let infowindow;
 
-        service = new google.maps.places.PlacesService(map);
+// function initMap() {
+//     let sydney = new google.maps.LatLng(-33.867, 151.195);
 
-        service.findPlaceFromQuery(request, function(results, status) {
-          if (status === google.maps.places.PlacesServiceStatus.OK) {
-            for (var i = 0; i < results.length; i++) {
-              createMarker(results[i]);
-            }
-            map.setCenter(results[0].geometry.location);
-        }
-      });
-    }
+//     infowindow = new google.maps.InfoWindow();
 
-    function createMarker(place) {
-      var marker = new google.maps.Marker({
-        map: map,
-        position: place.geometry.location
-      });
+//     map = new google.maps.Map(
+//         document.getElementById('map'), {center: sydney, zoom: 15});
 
-      google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(place.name);
-        infowindow.open(map, this);
-      });
-    }
+//     let request = {
+//         query: 'Museum of Contemporary Art Australia',
+//         fields: ['name', 'geometry'],
+//     };
+
+//     service = new google.maps.places.PlacesService(map);
+
+//     service.findPlaceFromQuery(request, function(results, status) {
+//         if (status === google.maps.places.PlacesServiceStatus.OK) {
+//         for (var i = 0; i < results.length; i++) {
+//             createMarker(results[i]);
+//         }
+//         map.setCenter(results[0].geometry.location);
+//     }
+//     });
+// }
+
+// function createMarker(place) {
+//     var marker = new google.maps.Marker({
+//     map: map,
+//     position: place.geometry.location
+//     });
+
+//     google.maps.event.addListener(marker, 'click', function() {
+//     infowindow.setContent(place.name);
+//     infowindow.open(map, this);
+//     });
+// }

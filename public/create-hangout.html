@@ -6,12 +6,13 @@
   <title>Taste Buds</title>
   <!-- Latest compiled and minified CSS & JS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../public/styles/styles.css" media="screen" title="no title">
+  <link rel="stylesheet" href="styles/styles.css">
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <!-- Add, remove, select buds for hangout -->
     <div class="show-buds-container">
         <h2>Buds</h2>
         <div class="form-check form-inline">
@@ -63,7 +64,7 @@
             <button type="submit" class="btn btn-primary mb-2 add-bud">Add</button>
         </form>
     </div>
-
+    <!-- Set location, date/time, and pick type of restaurant/bar for hangout -->
     <div class="create-hangout-container">
         <h2>Create a Hangout</h2>
         <form>
@@ -92,9 +93,48 @@
     </div>
     <button type="submit" class="btn btn-primary create-hangout" href="/hangout">Spin</button>
 
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWLRgKxz3nTinzcUXCyjM1DNpe9e4_g2w&libraries=places" async defer></script> -->
-  <script src="/public/js/buds.js" type="text/javascript"></script>
-  <script src="/public/js/hangout.js" type="text/javascript"></script>
+    <!-- Results for hangout  -->
+    <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">You're going to <span id="chosenRestaurant">name of restaurant</span>!</div>
+                    <div class="card-body">
+                        <div id="map"></div>
+                        <img src="img/powered_by_google_on_white.png" alt="google logo" id="google-logo">
+            
+                <div class="row">
+                    <div class="results-container">
+                    <p id="address">Address</p> 
+                    <p id="phone">Phone #</p>
+                    <p id="website">Website</p>
+                    <p id="hours">Hours</p>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="going-with-container">
+                        <h3>Have fun with:</h3>
+                        <p id="selectedBuds">Buds</p>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary create-hangout" href="#">Spin Again</button>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWLRgKxz3nTinzcUXCyjM1DNpe9e4_g2w&libraries=places&callback=initMap" async defer></script>
+  <!-- <script src="/public/js/buds.js" type="text/javascript"></script> -->
+  <script src="js/hangout.js" type="text/javascript"></script>
+
+  <script>
+        if (
+            window.location.host.indexOf("herokuapp.com") !== -1 &&
+            window.location.protocol !== "https:"
+        ) {
+            window.location.protocol = "https";
+        }
+  </script>
 
 </body>
 
