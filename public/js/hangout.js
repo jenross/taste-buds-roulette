@@ -3,7 +3,7 @@ let googleLogo = document.getElementById('google-logo');
 
 let locationResult;
 let searchResults;
-
+let map; 
 
 // Google Maps Initializer
 function initMap() {
