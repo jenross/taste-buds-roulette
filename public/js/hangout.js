@@ -17,6 +17,8 @@ function initMap() {
     // })
 }
 
+initMap();
+
 // gMaps Marker Creation
 function makeMarker(locationResult) {
     var marker = new google.maps.Marker({position: searchResults.coords, map: map});
