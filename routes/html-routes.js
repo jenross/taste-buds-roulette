@@ -14,19 +14,19 @@ module.exports = function(app) {
 
   // index route loads view.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/index.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
   app.get("/register", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/register.html"));
+    res.sendFile(path.join(__dirname, "../public/register.html"));
   });
 
   app.get("/create-hangout", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/create-hangout.html"));
+    res.sendFile(path.join(__dirname, "../public/create-hangout.html"));
   });
 
   app.get("/hangout", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/hangout.html"));
+    res.sendFile(path.join(__dirname, "../public/hangout.html"));
   });
 
 };
