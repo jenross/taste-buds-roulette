@@ -12,7 +12,7 @@ let infowindow;
         map = new google.maps.Map(
             document.getElementById('map'), {center: orlando, zoom: 15});
 
-        var request = {
+        let request = {
           query: 'Kres Chophouse',
           fields: ['name', 'geometry'],
         };
