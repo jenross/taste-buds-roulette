@@ -1,133 +1,212 @@
 <!DOCTYPE html>
 <html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Taste Buds</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Taste Buds</title>
-  <!-- Latest compiled and minified CSS & JS -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles/styles.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</head>
-
-<body>
+  <body>
     <!-- Add, remove, select buds for hangout -->
-    <div class="show-buds-container">
+    <div class="show-buds-container row">
+      <div class="container">
         <h2>Buds</h2>
         <div class="form-check form-inline">
-            <input class="form-check-input" type="checkbox" value="" id="bud1">
-            <label class="form-check-label" for="defaultCheck1">
+          <input class="form-check-input" type="checkbox" value="" id="bud1" />
+          <label class="form-check-label" for="defaultCheck1">
             Bud #1
-            </label>
-            <button type="submit" class="btn btn-primary ml-5 remove-bud">Remove</button>
+          </label>
+          <button type="submit" class="btn btn-primary ml-5 remove-bud">
+            Remove
+          </button>
         </div>
         <div class="form-check form-inline">
-            <input class="form-check-input" type="checkbox" value="" id="bud2">
-            <label class="form-check-label" for="defaultCheck2">
-                    Bud #2
-            </label>
-            <button type="submit" class="btn btn-primary ml-5 remove-bud">Remove</button>
+          <input class="form-check-input" type="checkbox" value="" id="bud2" />
+          <label class="form-check-label" for="defaultCheck2">
+            Bud #2
+          </label>
+          <button type="submit" class="btn btn-primary ml-5 remove-bud">
+            Remove
+          </button>
         </div>
         <div class="form-check form-inline">
-            <input class="form-check-input" type="checkbox" value="" id="bud3">
-            <label class="form-check-label" for="defaultCheck2">
-                    Bud #3
-            </label>
-            <button type="submit" class="btn btn-primary ml-5 remove-bud">Remove</button>
+          <input class="form-check-input" type="checkbox" value="" id="bud3" />
+          <label class="form-check-label" for="defaultCheck2">
+            Bud #3
+          </label>
+          <button type="submit" class="btn btn-primary ml-5 remove-bud">
+            Remove
+          </button>
         </div>
         <div class="form-check form-inline">
-            <input class="form-check-input" type="checkbox" value="" id="bud4">
-            <label class="form-check-label" for="defaultCheck2">
-                    Bud #4
-            </label>
-            <button type="submit" class="btn btn-primary ml-5 remove-bud">Remove</button>
+          <input class="form-check-input" type="checkbox" value="" id="bud4" />
+          <label class="form-check-label" for="defaultCheck2">
+            Bud #4
+          </label>
+          <button type="submit" class="btn btn-primary ml-5 remove-bud">
+            Remove
+          </button>
         </div>
         <div class="form-check form-inline">
-            <input class="form-check-input" type="checkbox" value="" id="bud5">
-            <label class="form-check-label" for="defaultCheck2">
+          <input class="form-check-input" type="checkbox" value="" id="bud5" />
+          <label class="form-check-label" for="defaultCheck2">
             Bud #5
-            </label>
-            <button type="submit" class="btn btn-primary ml-5 remove-bud">Remove</button>
+          </label>
+          <button type="submit" class="btn btn-primary ml-5 remove-bud">
+            Remove
+          </button>
         </div>
-
-          
-        <form class="form-inline">
+        <hr />
+        <div class="row">
+          <form class="form-inline">
             <div class="form-group mb-2">
-                <label for="addingNewBud" class="sr-only">Add a New Bud</label>
-                <input type="text" readonly class="form-control-plaintext" value="Add a New Bud">
+              <label for="addingNewBud" class="sr-only">Add a New Bud</label>
+              <input
+                type="text"
+                readonly
+                class="form-control-plaintext"
+                value="Add a New Bud"
+              />
             </div>
             <div class="form-group mx-sm-3 mb-2">
-                <label for="newBudName" class="sr-only">Add a New Bud</label>
-                <input type="text" class="form-control" id="newBudName" placeholder="Bud name">
+              <label for="newBudName" class="sr-only">Add a New Bud</label>
+              <input
+                type="text"
+                class="form-control"
+                id="newBudName"
+                placeholder="Bud name"
+              />
             </div>
-            <button type="submit" class="btn btn-primary mb-2 add-bud">Add</button>
-        </form>
-    </div>
-    <!-- Set location, date/time, and pick type of restaurant/bar for hangout -->
-    <div class="create-hangout-container">
-        <h2>Create a Hangout</h2>
-        <form>
+            <button type="submit" class="btn btn-primary mb-2 add-bud">
+              Add
+            </button>
+          </form>
+        </div>
+
+        <hr />
+        <!-- Set location, date/time, and pick type of restaurant/bar for hangout -->
+        <div class="create-hangout-container">
+          <h2>Create a Hangout</h2>
+          <form>
             <div class="form-group infowindow-content">
-                <label for="location">Location</label>
-                <input type="text" class="form-control" id="enterLocation" placeholder="City and State">
+              <label for="location">Location</label>
+              <input
+                type="text"
+                class="form-control"
+                id="enterLocation"
+                placeholder="City and State"
+              />
             </div>
             <div class="form-group">
-                    <label for="datetime">Date & Time</label>
-                    <input type="text" class="form-control" id="dateTime" placeholder="09/25/19, 7:00pm">
+              <label for="datetime">Date & Time</label>
+              <input
+                type="text"
+                class="form-control"
+                id="dateTime"
+                placeholder="09/25/19, 7:00pm"
+              />
             </div>
             <h3>Choose one:</h3>
             <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="cafe" value="option1">
-                    <label class="form-check-label" for="inlineCheckbox1">Cafe</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="restaurant" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">Restaurant</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="bar" value="option3">
-                    <label class="form-check-label" for="inlineCheckbox3">Bar</label>
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="cafe"
+                value="option1"
+              />
+              <label class="form-check-label" for="inlineCheckbox1">Cafe</label>
             </div>
-        </form>
-    </div>
-    <button type="submit" class="btn btn-primary create-hangout" href="/hangout">Spin</button>
-
-    <!-- Results for hangout  -->
-    <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">You're going to <span id="chosenRestaurant">name of restaurant</span>!</div>
-                    <div class="card-body">
-                        <div id="map"></div>
-                        <img src="img/powered_by_google_on_white.png" alt="google logo" id="google-logo">
-            
-                <div class="row">
-                    <div class="results-container">
-                    <p id="address">Address</p> 
-                    <p id="phone">Phone #</p>
-                    <p id="website">Website</p>
-                    <p id="hours">Hours</p>
-                    </div>
-                </div>
-    
-                <div class="row">
-                    <div class="going-with-container">
-                        <h3>Have fun with:</h3>
-                        <p id="selectedBuds">Buds</p>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary create-hangout" href="#">Spin Again</button>
-                </div>  
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="restaurant"
+                value="option2"
+              />
+              <label class="form-check-label" for="inlineCheckbox2"
+                >Restaurant</label
+              >
             </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="bar"
+                value="option3"
+              />
+              <label class="form-check-label" for="inlineCheckbox3">Bar</label>
+            </div>
+            <div class="mt-4 mb-4">
+              <button
+                type="submit"
+                class="btn btn-primary create-hangout"
+                href="/hangout"
+              >
+                Spin
+              </button>
+            </div>
+          </form>
         </div>
+        <hr />
+
+        <!-- Results for hangout  -->
+        <div class="row">
+          <div class="col-md-12">
+            <div id="map"></div>
+          </div>
+          </div>
+          <!-- <div class="card">
+              <div class="card-header">
+                You're going to
+                <span id="chosenRestaurant">name of restaurant</span>!
+              </div>
+              <div class="card-body">
+                 <img
+                  src="img/powered_by_google_on_white.png"
+                  alt="google logo"
+                  id="google-logo"
+                />
+              </div>
+            </div> -->
+          <div class="row">
+            <div class="results-container">
+              <p id="address">Address</p>
+              <p id="phone">Phone #</p>
+              <p id="website">Website</p>
+              <p id="hours">Hours</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="going-with-container">
+              <h3>Have fun with:</h3>
+              <p id="selectedBuds">Buds</p>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary create-hangout" href="#">
+            Spin Again
+          </button>
     </div>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWLRgKxz3nTinzcUXCyjM1DNpe9e4_g2w" async defer></script>
-  <!-- <script src="/public/js/buds.js" type="text/javascript"></script> -->
-  <script src="js/hangout.js" type="text/javascript"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWLRgKxz3nTinzcUXCyjM1DNpe9e4_g2w"
+      async
+      defer
+    ></script>
+    <script src="js/hangout.js" type="text/javascript"></script>
+    <!-- <script src="/public/js/buds.js" type="text/javascript"></script> -->
 
-  <!-- <script>
+    <!-- <script>
         if (
             window.location.host.indexOf("herokuapp.com") !== -1 &&
             window.location.protocol !== "https:"
@@ -135,7 +214,5 @@
             window.location.protocol = "https";
         }
   </script> -->
-
-</body>
-
+  </body>
 </html>

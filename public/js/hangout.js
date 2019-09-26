@@ -10,9 +10,9 @@ function initMap() {
     console.log("working");
     // let location = venue0;
     map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -28.5383, lng: 81.3792},
-      zoom: 15
-    });
+      center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+      });
     // searchResults.forEach(function(e, i) {
     //   makeMarker(locationResult[i]);
     // })
