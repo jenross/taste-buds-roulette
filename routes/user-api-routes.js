@@ -3,9 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all Users
   app.get("/api/user", function(req, res) {
-    db.User.findAll({
-      include: [db.Bud]
-    }).then(function(data) {
+    db.User.findAll().then(function(data) {
       console.log(data);
       res.json(data);
     });
@@ -17,8 +15,7 @@ module.exports = function(app) {
     db.User.findOne({
       where: {
         id: req.params.id
-      },
-      include: [db.Bud]
+      }
     }).then(function(dbUser) {
       res.json(dbUser)
     });
