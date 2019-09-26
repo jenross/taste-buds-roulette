@@ -5,15 +5,15 @@ let service;
 let infowindow;
 
       function initMap() {
-        let orlando = new google.maps.LatLng(-28.5383, 81.3792);
+        let sydney = new google.maps.LatLng(-33.867, 151.195);
 
         infowindow = new google.maps.InfoWindow();
 
         map = new google.maps.Map(
-            document.getElementById('map'), {center: orlando, zoom: 15});
+            document.getElementById('map'), {center: sydney, zoom: 15});
 
         let request = {
-          query: 'Kres Chophouse',
+          query: 'Museum of Contemporary Art Australia',
           fields: ['name', 'geometry'],
         };
 
