@@ -3,7 +3,7 @@ let googleLogo = document.getElementById('google-logo');
 
 let locationResult;
 let searchResults;
-let map; 
+var map; 
 
 // Google Maps Initializer
 function initMap() {
@@ -11,14 +11,14 @@ function initMap() {
     // let location = venue0;
     map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+          zoom: 15
       });
     // searchResults.forEach(function(e, i) {
     //   makeMarker(locationResult[i]);
     // })
 }
 
-initMap();
+// initMap();
 
 // gMaps Marker Creation
 function makeMarker(locationResult) {
