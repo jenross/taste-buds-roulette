@@ -12,21 +12,10 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      bud1: {
+      buds: {
         type: DataTypes.STRING,
-      },
-      bud2: {
-        type: DataTypes.STRING,
-      },
-      bud3: {
-        type: DataTypes.STRING,
-      },
-      bud4: {
-        type: DataTypes.STRING,
-      },
-      bud5: {
-        type: DataTypes.STRING,
-      },
+        defaultValue: ""
+      }
     })
   
     return User;

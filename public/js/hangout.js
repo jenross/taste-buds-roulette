@@ -68,3 +68,60 @@ function makeMarker(locationResult) {
 //     infowindow.open(map, this);
 //     });
 // }
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// Added Code from Dylan
+
+$(document).ready(function() {
+
+  const url = window.location.search;
+
+  // grabs the user ID passed through the url
+  let userId = url.split("=")[1];
+
+  getUserInfo(userId);
+
+  $(document).on("submit", "#newBud", newBudAdder(userId));
+});
+
+const getUserInfo = (userId) => {
+  queryUrl = "/api/user/" + userId;
+  $.get(queryUrl, function(data) {
+      console.log(data);
+
+      // Template markup to home page
+      let newTr = `
+      <h1>
+          ${data.name}
+      </h1>
+      `
+
+      budReplace(data);
+
+      // !!!!!! To be replaced with actual front-end !!!!!!!!!!!!!!!!!
+      $("#nametag").append(newTr);
+  })
+}
+
+const budReplace = (data) => {
+  // for (let i = 1; i < 6; i++) {
+  //   let bud = data.bud + i;
+  //   console.log(bud)
+  // }
+}
+
+const newBudAdder = (userId) => {
+  queryUrl = "/api/user";
+  $.get(queryUrl, function(data) {
+      console.log(data);
+
+      let budName = $("#newBudName").val().trim();
+      let budEmail = $("#newBudEmail").val().trim();
+
+      for (let i=0; i < data.length; i++) {
+        console.log(data[i])
+      }      
+
+      // Bud.update();
+  })
+}
