@@ -81,47 +81,80 @@ $(document).ready(function() {
 
   getUserInfo(userId);
 
-  $(document).on("submit", "#newBud", newBudAdder(userId));
+  $(document).on("submit", "#newBud", function() {
+    event.preventDefault();
+
+    const budName = $("#newBudName").val().trim();
+    const budEmail = $("#newBudEmail").val().trim();
+    const queryUrl = "/api/bud/" + userId;
+
+    const postBud = (budData) =>{
+      $.post(queryUrl, budData)
+      .then(refreshBuds)
+    };
+
+    postBud({
+      name: budName,
+      email: budEmail
+    });
+  });
+
+  
 });
 
 const getUserInfo = (userId) => {
   queryUrl = "/api/user/" + userId;
   $.get(queryUrl, function(data) {
-      console.log(data);
 
-      // Template markup to home page
+      // Display User Name
       let newTr = `
       <h1>
           ${data.name}
       </h1>
       `
-
-      budReplace(data);
-
-      // !!!!!! To be replaced with actual front-end !!!!!!!!!!!!!!!!!
       $("#nametag").append(newTr);
+
+      // Appends User's Buds to page
+      for (i=0; i < data.Buds.length; i++) {
+
+        let budsDiv = `
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-title">${data.Buds[i].name}</div>
+                <div class="card-text">${data.Buds[i].email}</div>
+              </div>
+              <div class="card-body pt-0">
+                <button data-id="${data.Buds[i].id}" id="deleteBud">DELETE</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8"></div>
+          `
+          $("#budsRow").append(budsDiv);
+
+      };
+
+      
+  });
+};
+
+// Grabs ID of Bud
+$("#budsRow").on("click", 'button', function() {
+  let id = $(this).attr("data-id");
+
+  $.ajax({
+    method: "DELETE",
+    url: "/api/bud/" + id
   })
-}
-
-const budReplace = (data) => {
-  // for (let i = 1; i < 6; i++) {
-  //   let bud = data.bud + i;
-  //   console.log(bud)
-  // }
-}
-
-const newBudAdder = (userId) => {
-  queryUrl = "/api/user";
-  $.get(queryUrl, function(data) {
-      console.log(data);
-
-      let budName = $("#newBudName").val().trim();
-      let budEmail = $("#newBudEmail").val().trim();
-
-      for (let i=0; i < data.length; i++) {
-        console.log(data[i])
-      }      
-
-      // Bud.update();
+  .then(function() {
+    refreshBuds();
   })
-}
+});
+
+
+const refreshBuds = () => {
+  // Currently refreshed page... Will be upgraded with simple friend refresh
+  window.location.reload();
+};
+

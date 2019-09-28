@@ -1,21 +1,30 @@
 module.exports = function(sequelize, DataTypes) {
-    console.log("here")
-      const Bud = sequelize.define("Bud", {
-        name: {
-          type: DataTypes.STRING,
-          allowNull: false,
-        },
-        email: {
-          type: DataTypes.STRING,
-          allowNull: false,
+    const Bud = sequelize.define("Bud", {
+      id: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        defaultValue: DataTypes.UUIDV4,
+        allowNull: false
+      },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [1, 40]
         }
-      })
-  
-      Bud.associate = function(models) {
-        Bud.belongsTo(models.User, {
-          onDelete: "cascade"
-        });
-      }
-    
-      return Bud;
-    };
+      },
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+          isEmail: true
+        }
+      },
+      userId: {
+        type: DataTypes.UUID,
+        allowNull: false
+      },
+    });
+    return Bud;
+   };
