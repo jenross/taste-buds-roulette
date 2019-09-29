@@ -1,12 +1,17 @@
 * {
-    box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 #map #infowindow-content {
-    display: inline;
+  display: inline;
+}
+
+.map-container {
+  height: 250px;
 }
 
 #map {
+
     height: 100%;
 }
 
@@ -32,3 +37,15 @@
 #loginContainer {
     height: 550px;
 }
+=======
+  margin: 0 auto;
+  width: 50%;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+

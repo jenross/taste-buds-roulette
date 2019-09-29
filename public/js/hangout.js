@@ -3,25 +3,28 @@ let googleLogo = document.getElementById('google-logo');
 
 let locationResult;
 let searchResults;
-
+var map; 
 
 // Google Maps Initializer
-function initMap(venue0, locationResult) {
-    let location = venue0;
+function initMap() {
+    console.log("working");
+    // let location = venue0;
     map = new google.maps.Map(document.getElementById('map'), {
-      center: locationResult,
-      zoom: 15
-    });
-    searchResults.forEach(function(e, i) {
-      makeMarker(locationResult[i]);
-    })
+      center: {lat: -34.397, lng: 150.644},
+          zoom: 15
+      });
+    // searchResults.forEach(function(e, i) {
+    //   makeMarker(locationResult[i]);
+    // })
 }
+
+// initMap();
 
 // gMaps Marker Creation
 function makeMarker(locationResult) {
-    var marker = new google.maps.Marker({position: venues.coords, map: map});
+    var marker = new google.maps.Marker({position: searchResults.coords, map: map});
     let infoWindow = new google.maps.InfoWindow({
-      content:locationResult.content
+      content:searchResults.content
     });
     marker.addListener('click', function() {
       infoWindow.open(map, marker);
