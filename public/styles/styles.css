@@ -2,17 +2,31 @@
   box-sizing: border-box;
 }
 
-#map #infowindow-content {
-  display: inline;
+#map {
+  height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .map-container {
-  height: 250px;
+  min-height: 300px;
+  max-width: 400px; 
 }
 
-#map {
+#infowindow-content .title {
+  font-weight: bold;
+}
 
-    height: 100%;
+#infowindow-content {
+  display: none;
+}
+
+#map #infowindow-content {
+  display: inline;
 }
 
 .logo {
