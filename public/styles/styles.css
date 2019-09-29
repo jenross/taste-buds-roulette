@@ -10,6 +10,9 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #70A9A1;
+  font-family: reem kufi;
+  color: #2E282A;
 }
 
 .map-container {
@@ -36,16 +39,27 @@ html, body {
     margin-left: auto;
     margin-right: auto;
 }
+#smallLogo {
+    position: absolute;
+    display: block;
+    height: 98px;
+    top: -9px;
+    left: -7px;
+}
 
 #slogan {
     position: relative;
     top: -20px;
+    font-family: damion;
 }
 
 #loginJum {
     position: relative;
-    top: -10px;
-    padding: 2rem 1rem;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: #564e76;
 }
 
 #loginContainer {
@@ -55,13 +69,6 @@ html, body {
   margin: 0 auto;
   width: 50%;
 } */
-
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
 
 li {
   list-style: none;
@@ -145,6 +152,7 @@ li {
 a.red {
   background-color: rgba(196, 101, 88, 1);
   color: #2E282A;
+  text-decoration: none; 
   border-color: darkgrey;
 }
 
@@ -176,4 +184,52 @@ a.red:hover {
 
 .red span {
   background: rgba(133,32,28,.7);		
+}
+
+footer {
+  position: relative;
+  bottom: 20px;
+}
+
+.footer-copyright a {
+  color: #564E76;
+  text-decoration: none; 
+} 
+
+.footer-copyright a:hover {
+  color: #0B2027; 
+} 
+
+#loginRow {
+height: 500px;
+}
+
+.card-header {
+  font-size: 37px;
+}
+
+.headerText {
+  margin: 0px 14px;
+}
+
+.login-body {
+  background-color: #fefdfa;
+}
+
+.reg-link {
+  text-decoration: none; 
+}
+
+.reg-link:hover {
+  color: #0B2027;
+  text-decoration: none; 
+}
+
+.label-login {
+  background-color: #fefdfa;
+}
+
+.login-button {
+   font-size: 22px; 
+   background-color: #2E282A;
 }

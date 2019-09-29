@@ -117,9 +117,9 @@ const getUserInfo = (userId) => {
 
       // Display User Name
       let newTr = `
-      <h1>
+      <div>
           ${data.name}
-      </h1>
+      </div>
       `
       $("#nametag").append(newTr);
 
