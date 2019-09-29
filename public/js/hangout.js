@@ -71,3 +71,93 @@ function makeMarker(locationResult) {
 //     infowindow.open(map, this);
 //     });
 // }
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// Added Code from Dylan
+
+$(document).ready(function() {
+
+  const url = window.location.search;
+
+  // grabs the user ID passed through the url
+  let userId = url.split("=")[1];
+
+  getUserInfo(userId);
+
+  $(document).on("submit", "#newBud", function() {
+    event.preventDefault();
+
+    const budName = $("#newBudName").val().trim();
+    const budEmail = $("#newBudEmail").val().trim();
+    const queryUrl = "/api/bud/" + userId;
+
+    const postBud = (budData) =>{
+      $.post(queryUrl, budData)
+      .then(refreshBuds)
+    };
+
+    postBud({
+      name: budName,
+      email: budEmail
+    });
+  });
+
+  
+});
+
+const getUserInfo = (userId) => {
+  queryUrl = "/api/user/" + userId;
+  $.get(queryUrl, function(data) {
+
+      // Display User Name
+      let newTr = `
+      <h1>
+          ${data.name}
+      </h1>
+      `
+      $("#nametag").append(newTr);
+
+      // Appends User's Buds to page
+      for (i=0; i < data.Buds.length; i++) {
+
+        let budsDiv = `
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-title">${data.Buds[i].name}</div>
+                <div class="card-text">${data.Buds[i].email}</div>
+              </div>
+              <div class="card-body pt-0">
+                <button data-id="${data.Buds[i].id}" id="deleteBud">DELETE</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8"></div>
+          `
+          $("#budsRow").append(budsDiv);
+
+      };
+
+      
+  });
+};
+
+// Grabs ID of Bud
+$("#budsRow").on("click", 'button', function() {
+  let id = $(this).attr("data-id");
+
+  $.ajax({
+    method: "DELETE",
+    url: "/api/bud/" + id
+  })
+  .then(function() {
+    refreshBuds();
+  })
+});
+
+
+const refreshBuds = () => {
+  // Currently refreshed page... Will be upgraded with simple friend refresh
+  window.location.reload();
+};
+

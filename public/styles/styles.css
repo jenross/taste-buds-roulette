@@ -11,6 +11,33 @@
 }
 
 #map {
+
+    height: 100%;
+}
+
+.logo {
+    position: relative;
+    top: -20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#slogan {
+    position: relative;
+    top: -20px;
+}
+
+#loginJum {
+    position: relative;
+    top: -10px;
+    padding: 2rem 1rem;
+}
+
+#loginContainer {
+    height: 550px;
+}
+=======
   margin: 0 auto;
   width: 50%;
 }
@@ -21,3 +48,4 @@ body {
   margin: 0;
   padding: 0;
 }
+
