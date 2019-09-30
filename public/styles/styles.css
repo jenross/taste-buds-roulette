@@ -4,6 +4,7 @@
 
 #map {
   height: 100%;
+  border: 1px groove darkgrey; 
 }
 /* Optional: Makes the sample page fill the window. */
 html, body {
@@ -16,8 +17,9 @@ html, body {
 }
 
 .map-container {
-  min-height: 300px;
-  max-width: 400px; 
+  min-height: 400px;
+  max-width: 650px; 
+  margin: 0 auto; 
 }
 
 #infowindow-content .title {
@@ -39,6 +41,7 @@ html, body {
     margin-left: auto;
     margin-right: auto;
 }
+
 #smallLogo {
     position: absolute;
     display: block;
@@ -176,7 +179,8 @@ a.red:hover {
 
 .round span:hover {
   opacity: .85;
-  font-size: 20px;
+  font-size: 22px;
+  color: #fff;
   font-family: 'PT Sans', sans-serif;
   -webkit-text-shadow: 0 1px 1px rgba(0,0,0,.5);
   -moz-text-shadow: 0 1px 1px rgba(0,0,0,.5);
@@ -243,21 +247,40 @@ height: 500px;
   font-size: 22px; 
 }
 
-.login-button, .add-bud {
+.login-button {
    font-size: 22px; 
    background-color: #564E76;
    border: #564E76;
 }
 
+.add-bud {
+  font-size: 22px; 
+  background-color: rgba(196, 101, 88, 1);
+  border: rgba(196, 101, 88, 1);
+  color: #2E282A;
+}
+
 .add-bud:hover {
-  background-color: #0B2027;
+  background-color: rgba(133,32,28,.7);	 
+  color: #2E282A;
 }
 
 .top-hangout {
   background-color: #E1DCDC;
   min-height: 100px; 
+  width: 100%; 
 }
 
 .hangout-form, .bud-form {
   background-color: #fefdfa;
+}
+
+h2 {
+  color: #272D2D;
+  font-family: damion;
+  font-size: 45px; 
+}
+
+.hangout-card {
+  width: 100%; 
 }
