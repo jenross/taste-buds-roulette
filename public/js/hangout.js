@@ -127,18 +127,15 @@ const getUserInfo = (userId) => {
       for (i=0; i < data.Buds.length; i++) {
 
         let budsDiv = `
-          <div class="col-md-4">
+          <div class="col-sm-6">
             <div class="card">
-              <div class="card-body">
-                <div class="card-title">${data.Buds[i].name}</div>
-                <div class="card-text">${data.Buds[i].email}</div>
-              </div>
-              <div class="card-body pt-0">
-                <button data-id="${data.Buds[i].id}" id="deleteBud">DELETE</button>
+              <div class="card-body d-inline show-bud">
+                <p class="d-inline mr-1">${data.Buds[i].name}:</p>
+                <p class="d-inline">${data.Buds[i].email}</p>
+                <button type="submit" class="btn btn-primary mb-2 d-inline" data-id="${data.Buds[i].id}" id="deleteBud">Delete</button>
               </div>
             </div>
           </div>
-          <div class="col-md-8"></div>
           `
           $("#budsRow").append(budsDiv);
 
