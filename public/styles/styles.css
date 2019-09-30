@@ -53,6 +53,8 @@ html, body {
 #slogan {
     position: relative;
     font-family: damion;
+    color: #272D2D;
+    margin-top: -20px; 
 }
 
 #loginJum {
@@ -68,10 +70,6 @@ html, body {
     height: 400px;
     max-width: 400px; 
 }
-/* =======
-  margin: 0 auto;
-  width: 50%;
-} */
 
 li {
   list-style: none;
@@ -239,11 +237,11 @@ height: 500px;
 
 .label-login {
   background-color: #fefdfa;
-  font-size: 22px; 
+  font-size: 16px; 
 }
 
 .login-button {
-   font-size: 22px; 
+   font-size: 16px; 
    background-color: #564E76;
    border: #564E76;
 }
@@ -278,4 +276,8 @@ h2 {
 
 .hangout-card {
   width: 100%; 
+}
+
+h3 {
+  font-size: 28px; 
 }
