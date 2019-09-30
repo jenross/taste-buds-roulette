@@ -127,12 +127,15 @@ const getUserInfo = (userId) => {
       for (i=0; i < data.Buds.length; i++) {
 
         let budsDiv = `
-          <div class="col-sm-6">
+          <div class="col-sm-12 p-0">
             <div class="card">
               <div class="card-body d-inline show-bud">
-                <p class="d-inline mr-1">${data.Buds[i].name}:</p>
+                <p class="d-inline mr-1">${data.Buds[i].name}</p>
+                <br>
                 <p class="d-inline">${data.Buds[i].email}</p>
-                <button type="submit" class="btn btn-primary mb-2 d-inline" data-id="${data.Buds[i].id}" id="deleteBud">Delete</button>
+                <button type="submit" class="btn btn-link mb-2 d-inline" data-id="${data.Buds[i].id}" id="deleteBud">
+                <img class="trash" src="img/trashcan.png" alt="Delete">
+                </button>
               </div>
             </div>
           </div>
