@@ -11,7 +11,7 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: #70A9A1;
-  font-family: 'Sriracha', cursive;
+  font-family: 'PT Sans', sans-serif;
   color: #2E282A;
 }
 
@@ -118,7 +118,7 @@ li {
   font-size: 25px;		
   text-shadow: 0 1px 0 rgba(255,255,255,.7);
   letter-spacing: -.065em;
-  font-family: "Hammersmith One", sans-serif;		
+  font-family: 'PT Sans', sans-serif;		
   -webkit-transition: all .25s ease-in-out;
   -o-transition: all .25s ease-in-out;
   -moz-transition: all .25s ease-in-out;
@@ -152,7 +152,7 @@ li {
 a.red {
   background-color: rgba(196, 101, 88, 1);
   color: #2E282A;
-  font-family: 'Sriracha', cursive;
+  font-family: 'PT Sans', sans-serif;
   text-decoration: none; 
   border-color: darkgrey;
 }
@@ -177,7 +177,7 @@ a.red:hover {
 .round span:hover {
   opacity: .85;
   font-size: 20px;
-  font-family: 'Sriracha', cursive;
+  font-family: 'PT Sans', sans-serif;
   -webkit-text-shadow: 0 1px 1px rgba(0,0,0,.5);
   -moz-text-shadow: 0 1px 1px rgba(0,0,0,.5);
   -o-text-shadow: 0 1px 1px rgba(0,0,0,.5);
@@ -211,7 +211,18 @@ height: 500px;
 }
 
 .headerText {
-  margin: 0px 14px;
+  font-size: 22px; 
+  color: #564E76;
+}
+
+.headerText a {
+  font-size: 22px; 
+  color: #564E76;
+}
+
+.headerText a:hover {
+  color: #0B2027;
+  text-decoration: none; 
 }
 
 .login-body {
@@ -232,11 +243,21 @@ height: 500px;
   font-size: 22px; 
 }
 
-.login-button {
+.login-button, .add-bud {
    font-size: 22px; 
-   background-color: #2E282A;
+   background-color: #564E76;
+   border: #564E76;
+}
+
+.add-bud:hover {
+  background-color: #0B2027;
 }
 
 .top-hangout {
-  background-color: #f5f5f5;
+  background-color: #E1DCDC;
+  min-height: 100px; 
+}
+
+.hangout-form, .bud-form {
+  background-color: #fefdfa;
 }

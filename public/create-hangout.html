@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Damion%7CReem+Kufi&display=swap">
     <link href="https://fonts.googleapis.com/css?family=Sriracha&display=swap" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
@@ -15,50 +15,48 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header top-hangout">
-                            <img id="smallLogo" src="img\tastebuds-logo.png" alt="logo">
-                            <div  class="float-right headerText">
+                            <img class="mt-2" id="smallLogo" src="img\tastebuds-logo.png" alt="logo">
+                            <div  class="mt-3 float-right headerText">
                                     <a href="/index">Logout</a>
                             </div>
-                            <div  class="float-right headerText" id="nametag"></div>
+                            <div  class="mt-3 float-right headerText" id="nametag"></div>
                             
                         </div>
                     </div>
                 </div>
         </div>
       <div class="container">
-    
-
-    <div id="budsRow" class="row"></div>
           
     <div class="row">
-        <div class="col-md-12">
-            <form id="newBud" class="form-inline">
+        <div class="col-md-6">
+            <h2 class="mt-3 text-center">Buds</h2>
+            <form id="newBud" class="form-inline text-center">
             <div class="form-group mb-2">
                 <label for="newBudName" class="sr-only">New Bud's Name</label>
-                <input type="text" id="newBudName" class="form-control-plaintext" value="Name">
+                <input type="text" id="newBudName" class="form-control bud-form" placeholder="Name">
             </div>
             <div class="form-group mx-sm-3 mb-2">
                 <label for="newBudEmail" class="sr-only">New Bud's Email</label>
-                <input type="text" class="form-control" id="newBudEmail" placeholder="Email">
+                <input type="text" class="form-control bud-form" id="newBudEmail" placeholder="Email">
             </div>
                 <button type="submit" class="btn btn-primary mb-2 add-bud">
                     Add
                 </button>
             </form>
         </div>
-        <hr />
-        </div>
+    </div>
+
+    <div id="budsRow"></div>
     
-    
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Create a Hangout</h2>
+   
+        <div class="col-md-6">
+            <h2 class="mt-3 text-center">Create a Hangout</h2>
             <form>
                 <div class="form-group infowindow-content">
                 <label for="location">Location</label>
                 <input
                     type="text"
-                    class="form-control"
+                    class="form-control hangout-form"
                     id="enterLocation"
                     placeholder="City and State"
                 />
@@ -67,27 +65,19 @@
                 <label for="datetime">Date & Time</label>
                 <input
                     type="text"
-                    class="form-control"
+                    class="form-control hangout-form"
                     id="dateTime"
                     placeholder="MM/DD/YY, 7:00pm"
                 />
             </div>
-            <div class="mt-4 mb-4 button-container">
+            <div class="mt-4 mb-4 button-container text-center">
                 <!-- <button type="submit" class="btn btn-primary create-hangout">  -->
                     <ul>
                     <li><a href="#" class="round red create-hangout">Spin<span class="round">Eat, drink, and be merry! </span></a></li>
                     </ul>
             </div>
-            </form>
-        <hr />
+        </form>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-12">
-            <div>You're going to <span id="chosenRestaurant">name of restaurant</span>!</div>
-        </div>
-    </div>
 
     <div class="row">
         <div class="col-md-12 map-container text-center">
