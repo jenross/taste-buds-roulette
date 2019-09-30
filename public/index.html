@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" class="h-100">
 
 <head>
   <meta charset="UTF-8">
@@ -13,10 +13,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body class="d-flex flex-column h-100">
+    <main role="main" class="flex-shrink-0">
     <div class="container">
         <div class="row">
-            <img class="logo" src="img\tastebuds-logo.png" alt="logo">
+            <img class="logo img-fluid mx-auto" src="img\tastebuds-logo.png" alt="logo">
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -24,7 +25,7 @@
             </div>       
         </div>
             <div id="loginRow" class="row">
-                <div id="loginContainer" class="col-8 offset-2">
+                <div id="loginContainer" class="col-8 offset-2 mx-auto mt-3">
                 <div id="loginJum" class="jumbotron p-b-50">
                     <div class="row">
                     <div class="col-md-11 m-auto">
@@ -68,10 +69,11 @@
     </div>
     </div>
     </div>
-        <footer class="page-footer font-small blue">
+    </main>
+        <footer role="contentinfo" class="page-footer font-small blue mt-auto mx-auto py-3">
 
             <!-- Copyright -->
-            <div class="footer-copyright text-center py-3">© 2019 Created By:
+            <div class="footer-copyright text-center">© 2019 Created By:
               <a href="https://github.com/jenross" target="_blank">Jen Ross, </a>
               <a href="https://github.com/dylandavispc" target="_blank">Dylan Davis, </a>
               <a href="https://github.com/dsanchez910" target="_blank">Daniel Sanchez, </a>

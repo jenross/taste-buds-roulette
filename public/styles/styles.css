@@ -38,8 +38,8 @@ html, body {
     position: relative;
     top: -20px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    max-height: 400px;
+    max-width: 600px; 
 }
 
 #smallLogo {
@@ -52,7 +52,6 @@ html, body {
 
 #slogan {
     position: relative;
-    top: -20px;
     font-family: damion;
 }
 
@@ -66,7 +65,8 @@ html, body {
 }
 
 #loginContainer {
-    height: 550px;
+    height: 400px;
+    max-width: 400px; 
 }
 /* =======
   margin: 0 auto;
@@ -190,11 +190,6 @@ a.red:hover {
 
 .red span {
   background: rgba(133,32,28,.7);		
-}
-
-footer {
-  position: relative;
-  bottom: 20px;
 }
 
 .footer-copyright a {
