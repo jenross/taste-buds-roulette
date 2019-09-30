@@ -45,12 +45,12 @@ autocomplete.addListener('place_changed', function() {
             url: initialQueryURL,
             method: "GET"
         }).then(function(response) {
-            // for (let i = 0; i < response.results.length; i++) {
-            //     let place_id = response.results[i].place_id;
-            //     resultsArr.push(place_id);
-            //     randomPick = resultsArr[randomize(0, resultsArr.length - 1)];
-            // }
-            randomPick = response.results[randomize(0, response.results.length - 1)].place_id;
+            for (let i = 0; i < response.results.length; i++) {
+                let place_id = response.results[i].place_id;
+                resultsArr.push(place_id);
+                randomPick = resultsArr[randomize(0, resultsArr.length - 1)];
+            }
+            // randomPick = response.results[randomize(0, response.results.length - 1)].place_id;
             console.log(randomPick);
             let pickedQueryURL = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?key=${APIKEY}&place_id=${randomPick}`;
             $.ajax({
@@ -167,3 +167,10 @@ const refreshBuds = () => {
   window.location.reload();
 };
 
+$( ".create-hangout" ).mouseenter(function() {
+  $( ".spin" ).hide();
+});
+
+$( ".create-hangout" ).mouseleave(function() {
+  $( ".spin" ).show();
+});
