@@ -1,6 +1,9 @@
 let resultsArr = [];
 let randomPick;
 
+let googleName;
+let googleLocation;
+
 const randomize = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 function initMap() {
@@ -58,6 +61,12 @@ autocomplete.addListener('place_changed', function() {
                 method: "GET"
             }).then(function(response) {
                 let pickName = response.result.name;
+
+                // Setting Variables for Module
+                googleName = pickName;
+                googleLocation = response.result.formatted_address;
+                console.log(googleLocation)
+
                 console.log(pickName);
                 map.setCenter(response.result.geometry.location);
                 map.setZoom(17);  // Why 17? Because it looks good.
@@ -89,6 +98,7 @@ $(document).ready(function() {
   let userId = url.split("=")[1];
 
   getUserInfo(userId);
+  
 
   $(document).on("submit", "#newBud", function() {
     event.preventDefault();
@@ -108,6 +118,31 @@ $(document).ready(function() {
     });
   });
 
+  //MIMIC CREATE HANGOUT TEST
+  $("#planIt").on("click", function(event) {
+    event.preventDefault();
+
+    
+    let dateTime = $("#dateTime").val().trim();
+
+    console.log(dateTime)
+
+    if (dateTime !== undefined && googleLocation !== undefined && googleName !== undefined) {
+      budFinder(userId)
+    }
+    else {
+      if (dateTime === undefined && googleLocation === undefined && googleName === undefined) {
+        alert("Please fill spin the Dining Roullete Wheel and enter a time!")
+      }
+      else if (dateTime === undefined) {
+        alert("Please fill out a date and time!")
+      }
+      else {
+        alert("Please fill out location and spin Roullete Wheel!")
+      };
+    };
+    
+  });
   
 });
 
@@ -136,6 +171,7 @@ const getUserInfo = (userId) => {
                 <button type="submit" class="btn btn-link mb-2 d-inline" data-id="${data.Buds[i].id}" id="deleteBud">
                 <img class="trash" src="img/trashcan.png" alt="Delete">
                 </button>
+                <input type="checkbox" class="checkbox" name="check" value="${data.Buds[i].id}">
               </div>
             </div>
           </div>
@@ -174,3 +210,62 @@ $( ".create-hangout" ).mouseenter(function() {
 $( ".create-hangout" ).mouseleave(function() {
   $( ".spin" ).show();
 });
+
+
+
+
+//Handles the buds selected when creating a hangout
+const budFinder = (userId) => {
+
+  // Clear Fields
+  $("#locName").empty();
+  $("#locAdd").empty();
+  $("#date").empty();
+  $("#module-lister").empty();
+  
+
+  queryUrl = "/api/user/" + userId;
+  $.get(queryUrl, function(data) {
+
+  let ids = [];
+
+    $('input[type="checkbox"]:checked').each(function() {
+
+      ids.push($(this).val());
+    });
+    
+  //loop through Database Buds
+  for (let i=0; i < data.Buds.length; i++) {
+    let budId = data.Buds[i];
+
+    //loop through checked buds
+    for (let o=0; o < ids.length; o++) {
+
+      //If Match: display
+      if (budId.id === ids[o]) {
+        console.log(budId.name);
+
+        // Appends friends to Plan Module
+        let list = `
+        <li class="list-group-item">${budId.name}</li>
+        `
+
+        $("#module-lister").append(list);
+      };
+    };
+  };
+
+});
+
+$("#locName").append(googleName);
+$("#locAdd").append(googleLocation);
+
+let planTime = $("#dateTime").val().trim();
+$("#date").append(planTime);
+
+$("#resultsModal").modal('toggle');
+};
+
+
+
+

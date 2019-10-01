@@ -89,15 +89,54 @@
             </div>
             <div class="mt-4 mb-4 button-container text-center">
                 <!-- <button type="submit" class="btn btn-primary create-hangout">  -->
-                    <ul>
+                    <ul id="spinner">
                     <li><a href="#" class="round red create-hangout"><span class="spin">Spin</span><span class="round">Nom, nom, nom! </span></a></li>
                     </ul>
             </div>
+            <button id="planIt" type="submit" class="btn btn-primary mb-2 add-bud">
+                    <h2>Plan it!</h2>
+            </button>
         </form>
         </div>
     </div>
 
     
+</div>
+
+<div id="resultsModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal Content-->
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <h2 class="modal-title"><strong>Have a Good Time!</strong></h2>
+            </div>
+
+            <!-- Modal Body (For Match Info) -->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h2 id="locName">BlockBuster</h2>
+                        <h3 id="locAdd">123 Chezoo Ave.</h3>
+                        <h3 id="date"></h3>
+                    </div>
+                    <div class="col-md-5">
+                        <ul class="list-group list-group-flush" id="module-lister">
+                            <!-- List items Appended Here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer (Close Button) -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+
+          </div>
+
+    </div>
 </div>
 
 

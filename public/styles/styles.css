@@ -343,3 +343,21 @@ h3 {
 .hangout-form-bold {
   font-weight: bold; 
 }
+
+#spinner {
+  padding: 0px;
+}
+
+.checkbox {
+  height: 15px;
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+}
+
+.list-group-item {
+  width: 100%;
+  height: 100%;
+  padding-top: 21px;
+  padding-bottom: 21px;
+}
