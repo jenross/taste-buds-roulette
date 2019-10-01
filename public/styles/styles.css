@@ -361,3 +361,12 @@ h3 {
   padding-top: 21px;
   padding-bottom: 21px;
 }
+
+.bud-name {
+  font-weight: bold; 
+}
+
+.buds-email:hover {
+  text-decoration: none; 
+  color: #0b2027;
+}

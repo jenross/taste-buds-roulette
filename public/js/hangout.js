@@ -146,6 +146,10 @@ $(document).ready(function() {
   
 });
 
+let locationName = $("#locName").val().trim();
+let locationAdddress = $("#locAdd").val().trim(); 
+let hangoutDateTime = $("#date").val().trim(); 
+
 const getUserInfo = (userId) => {
   queryUrl = "/api/user/" + userId;
   $.get(queryUrl, function(data) {
@@ -165,9 +169,9 @@ const getUserInfo = (userId) => {
           <div class="col-sm-12 p-0">
             <div class="card">
               <div class="card-body d-inline show-bud">
-                <p class="d-inline mr-1">${data.Buds[i].name}</p>
+                <p class="d-inline mr-1 bud-name">${data.Buds[i].name}</p>
                 <br>
-                <p class="d-inline">${data.Buds[i].email}</p>
+                <p class="d-inline"><a class="buds-email" href="mailto: ${data.Buds[i].email}?Subject=Let's%20hangout!">${data.Buds[i].email}</a></p>
                 <button type="submit" class="btn btn-link mb-2 d-inline" data-id="${data.Buds[i].id}" id="deleteBud">
                 <img class="trash" src="img/trashcan.png" alt="Delete">
                 </button>
