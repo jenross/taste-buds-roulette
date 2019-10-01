@@ -146,9 +146,9 @@ $(document).ready(function() {
   
 });
 
-let locationName = $("#locName").val().trim();
-let locationAdddress = $("#locAdd").val().trim(); 
-let hangoutDateTime = $("#date").val().trim(); 
+// let locationName = $("#locName").val().trim();
+// let locationAdddress = $("#locAdd").val().trim(); 
+// let hangoutDateTime = $("#date").val().trim(); 
 
 const getUserInfo = (userId) => {
   queryUrl = "/api/user/" + userId;

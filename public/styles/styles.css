@@ -136,7 +136,7 @@ li {
   font-size: 25px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
   letter-spacing: -0.065em;
-  font-family: "PT Sans", sans-serif;
+  font-family: damion;
   -webkit-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
@@ -170,7 +170,7 @@ li {
 a.red {
   background-color: rgba(196, 101, 88, 1);
   color: #2e282a;
-  font-family: "PT Sans", sans-serif;
+  font-family: damion;
   text-decoration: none;
   border-color: darkgrey;
 }
@@ -196,7 +196,7 @@ a.red:hover {
   opacity: 0.85;
   font-size: 22px;
   color: #fff;
-  font-family: "PT Sans", sans-serif;
+  font-family: damion;
   -webkit-text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
   -moz-text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
   -o-text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
@@ -277,7 +277,7 @@ a.red:hover {
   background-color: rgba(196, 101, 88, 1);
   border: rgba(196, 101, 88, 1);
   color: #2e282a;
-  width: 100%;
+  /* width: 100%; */
 }
 
 #deleteBud {
@@ -369,4 +369,23 @@ h3 {
 .buds-email:hover {
   text-decoration: none; 
   color: #0b2027;
+}
+
+.nom:hover {
+  font-family: damion;
+}
+
+.plan-it:hover {
+  background-color: #0b2027;
+}
+
+.plan-it {
+  font-size: 25px;
+  font-family: damion;
+  background-color: rgba(196, 101, 88, 1);
+  border: rgba(196, 101, 88, 1);
+  color: #2e282a;
+  max-height: 80px;
+  padding: 20px;  
+  margin-left: 400px; 
 }
