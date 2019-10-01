@@ -29,12 +29,19 @@ $(document).ready(function() {
       let email = $("#email").val().trim();
       let password = $("#password").val().trim();
 
-      // POST Method
-      postUser({
-        name,
-        email,
-        password
-      });
+      console.log(name)
+
+      if (name === "" || email === "" || password === "") {
+        alert("Please fill out all of the form!")
+      }
+      else {
+        // POST Method
+        postUser({
+          name,
+          email,
+          password
+        });
+      };
     });
   });
   

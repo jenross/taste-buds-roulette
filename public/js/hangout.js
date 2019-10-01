@@ -154,6 +154,8 @@ const getUserInfo = (userId) => {
   queryUrl = "/api/user/" + userId;
   $.get(queryUrl, function(data) {
 
+    console.log(data)
+
       // Display User Name
       let newTr = `
       <div>
@@ -251,7 +253,10 @@ const budFinder = (userId) => {
 
         // Appends friends to Plan Module
         let list = `
-        <li class="list-group-item">${budId.name}</li>
+        <li class="list-group-item text-right">
+        ${budId.name}<br>
+        <a class="buds-email" href="mailto: ${data.Buds[i].email}?Subject=Let's%20hangout!">${data.Buds[i].email}</a>
+        </li>
         `
 
         $("#module-lister").append(list);

@@ -3,6 +3,7 @@ $(document).ready(function() {
     $(document).on("submit", "#login", function() {
       event.preventDefault();
   
+      let tof;
       // Grabs email & password from login page
       let email = $("#email").val().trim();
       let password = $("#password").val().trim();
@@ -17,11 +18,18 @@ $(document).ready(function() {
             userId = data[i].id;
   
             login(userId);
+
+            tof = "false"
   
           }
           else {
-              console.log("User not found!!!")
+              tof = "true";
           }
+          
+        }
+        console.log(tof)
+        if (tof === "true") {
+          alert("User not found!!!")
         }
       })
       
