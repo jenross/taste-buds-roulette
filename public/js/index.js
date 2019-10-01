@@ -27,10 +27,10 @@ $(document).ready(function() {
           }
           
         }
-        console.log(tof)
-        if (tof === "true") {
-          alert("User not found!!!")
-        }
+        // console.log(tof)
+        // if (tof === "true") {
+        //   alert("User not found!!!")
+        // }
       })
       
     });
